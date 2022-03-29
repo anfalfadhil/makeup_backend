@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} 
+USer Profile
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/profile.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+<h2 class='home'><a href="{% url "home-page"%}">💄Makeup</a></h2>
+
+<header>
+
+<div class="profile-info">
+    <img class='profile-image' src="{{ user.profile.image.url }}" >
+    <div class="my-info">
+    <h1 class='username'>{{ user.username }}</h1>
+    {% comment %} <p>{{ user.email }}</p> {% endcomment %}
+    <a class='my-palette-link' href="{% url "add_to_my_palette"%}">My Palette 🎨</a>
+    <a class='my-palette-link' href="{% url "edit-profile"%}">Edit my Beauty 🦋</a>
+    </div>
+
+</div>
+</header>
+<br/>
+<br/>
+<div class='posts-container'>
+    {% for post in user.posts.all %}
+        <a href="posts/{{post.slug}}">
+        <div class='profile-post-card'>
+            <img class='profile-post-image' src="{{ post.image.url }}" alt="{{ post.title }}" >
+                <div >
+                  	<h2 >{{ post.title }}</h2>
+                    {% comment %} <p>{{ post.content }}</p> {% endcomment %}
+			    </div>
+			</div>
+        </a>
+	{% endfor %}
+</div>
+
+
+{% comment %} <button type="button" data-toggle="modal" data-target="#profileModal">Edit Profile</button>
+
+
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    <fieldset>
+        <legend>Edit Profile</legend>
+            {{ user_form|crispy }}
+            {{ profile_form|crispy }}
+    </fieldset>
+    <div>
+        <button type="submit">Update</button>
+        <button type="button" data-dismiss="modal">Close</button>
+    </div>
+</form> {% endcomment %}
+
+</form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+all posts
+{% endblock %} 
+
+{% block css_files %}
+<link type="text/css" rel="stylesheet" href="{% static "makeup/allPostsPage.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+
+
+<div>
+<header>
+<h2 class='home'><a href="{% url "home-page"%}">💄Makeup</a></h2>
+<nav>
+{% if user.is_authenticated %}
+<a class='nav_item' href="{% url "user-profile"%}">My Beauty 🌸</a>
+<a class='nav_item' href="{% url "new-post" %}">Create new Beauty 💄</a>
+<span class='nav_item'>Hi beautiful {{ request.user }}</span>
+<span class='nav_item'><a href="{% url "logout" %}">Logout</a></span>
+</nav>
+{% else %}
+<p class='auth'>hey pretty face, you are not looged in, login <a class='login-page' href='/login'>here</a></p>
+{% endif %}
+</header>
+</div>
+
+
+    <section id="all_posts_list">
+        <h2 class="beauty_collection_title" >✨ Beauty Collection ✨</h2>
+        <div class='posts-container'>
+        <ul id="all_posts_list_items">
+            {% for post in posts %}
+            
+                <a  href="posts/{{post.slug}}">
+                    <li id='post-card'> 
+                        {% comment %} <div class='post_title'>
+                        {{ post.title }} 
+                        </div> {% endcomment %}
+                        <img class='post-card-image' src="{{post.image.url}}" alt={{post.title}}/>
+                     </li>
+                </a>
+       
+            {% endfor %}
+            
+        </ul>
+        </div>
+    </section>
+{% endblock %}

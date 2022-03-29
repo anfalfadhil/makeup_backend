@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/deletePost.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+<p>Hey pretty face, are you sure you want to delete {{ post }}?</p>
+
+<form action="{% url "delete-post" post.id %}" method="POST">
+{% csrf_token %}
+<a href="{% url "all-posts" %}"><button>Nah, just Keep it</button></a>
+<input type="submit" name="confirm">
+</form>
+</div>
+
+{% endblock %}

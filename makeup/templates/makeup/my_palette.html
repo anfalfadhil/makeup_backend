@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Palette
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/my-palette.css" %}" />
+{% endblock %}
+
+{% block content %}
+     <h2 class='home'><a class='home' href="{% url "home-page"%}">💄Makeup</a></h2>
+    <section id="posts_list">
+    {% if not has_posts%}
+    <p>Hey Pretty, you don't have any posts added to your palette 🎨</p>
+    {% endif %}
+        <ul>
+        {% for post in posts%}
+            <li><a href="{% url "single_post" post.slug %}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </section>
+
+{% endblock %}

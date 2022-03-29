@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} 
+Edit Profile
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/profile-edit.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+<h2 class='home'><a href="{% url "home-page"%}">💄Makeup</a></h2>
+
+<form class='edit_form_container' method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="form-div">
+        <legend>Edit Profile</legend>
+            {{ user_form|crispy }}
+            {{ profile_form|crispy }}
+    </div>
+    <div>
+        <button class="btn" type="submit">Update</button>
+        <a  href="{% url "user-profile"%}"><button class="btn"  type="button" data-dismiss="modal" >Close</button></a>
+    </div>
+</form>
+
+</form>
+
+{% if form.errors %}
+       {% for field in form %}
+           {% for error in field.errors %} 
+              <div class="alert alert-danger">
+                   <strong>{{ error }}</strong>
+              </div>
+           {% endfor %}
+       {% endfor %}
+    {% endif %}
+
+{% endblock%}

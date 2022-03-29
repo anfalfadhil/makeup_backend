@@ -1,0 +1,28 @@
+{% load static %}
+
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/loginPage.css" %}" />
+{% endblock %}
+
+<div class="login_form_container">
+    <h1 class="login_text">Login Pretty 💋</h1>
+    <form method="POST" action="">
+        {%  csrf_token %}
+        {% for field in form %}
+        {{ field.label }}
+        {{field.errors }}   
+        {{ field}}
+        {% endfor %}
+        <input class="login_button" type="submit" name="login">
+       
+    </form>
+
+
+
+    <div>
+    Don't have an account? <a href="{% url "register" %}">Register</a>
+    </div>
+
+</div>

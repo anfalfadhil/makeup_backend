@@ -1,0 +1,83 @@
+* {
+   
+    padding: 5px;
+    margin:5px;
+}
+
+header{
+    border-bottom: 1px solid black;
+    background-image: url("profile-header.jpg");
+    background-position: center;
+    background-size: auto 400px;
+    margin: auto;
+    padding:auto;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.home a {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.7;
+    color:black;  
+    list-style: none;
+    text-decoration: none;
+}
+.profile-image {
+    max-width: 200px;
+    max-height: 200px;
+    border: 3px solid rgb(220, 39, 154);
+    border-radius: 20px;
+    float:left;
+    padding: 0;
+    margin: 20px;
+}
+
+.profile-info {
+    display: inline;
+}
+
+.profile-post-card {
+    border: 1px solid rgb(220, 39, 154);
+    border-radius: 10px;
+    width: 30vh;
+    height: 300px;
+    display: inline-block;
+    /* max-height: 400px; */
+    text-align:center;
+    margin: auto;
+}
+
+.posts-container{
+    display: inline-block;
+}
+
+
+.profile-post-image {
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+    margin: auto;
+    display: inline-block;
+}
+
+.my-info {
+    margin: 20px;
+}
+
+.my-palette-link {
+    text-decoration: wavy;
+    color:rgb(220, 39, 154);
+    display: block;
+}
+
+
+.edit-profile-link {
+    text-decoration: none;
+    color:rgb(220, 39, 154)  
+}
+
+/* .username {
+    color: rgb(220, 39, 154)
+} */

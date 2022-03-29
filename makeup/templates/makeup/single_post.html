@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %} 
+{{ post.title }}
+{% endblock %} 
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/single-post.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+{% if comment_form.errors  %}
+<div>
+    <h2>Hey pretty face, Posting the comment failed</h2>
+    <p>Please check the comment and post again </p>
+</div>
+{% endif %}
+
+<header>
+<div class='nav-container'>
+ <h2 ><a class='home' href="{% url "home-page"%}">💄Makeup</a></h2>
+ <nav >
+<a class='nav_item' href="{% url "all-posts"%}">Collection</a>
+{% if user.is_authenticated%}
+<a  class='nav_item' href="{% url "add_to_my_palette"%}">My Palette 🎨</a>
+{% if user.id == post.author.id %}
+<a  class='nav_item' href="{% url "update-post" post.id %}">Updated💅🏾</a>
+
+<a  class='nav_item' href="{% url "delete-post" post.id %}">Wipe it off 🧼</a>
+{% endif %}
+{% endif %}
+</nav>
+</div>
+</header>
+
+    <section clsss="single_post_container">
+        <div class="add_to_my_palette_bto">
+        {% if user.is_authenticated %}
+            <form action="{% url "add_to_my_palette" %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" value="{{ post.id }}" name="post_id"/>
+                <button class='add'>
+                {% if in_my_palette %}
+                wipe if off my palette
+                {% else %}
+                Add to my palette🎨
+                {% endif %}
+                </button>
+            </form>
+            {% endif %}
+        </div>
+
+        <div class='the-post'>
+         <h1 class="post_title">{{ post.title }}</h1>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+        <div class="tags">
+            {% for tag in tags %}
+                <span class="tag">{{ tag.caption}}</span>
+            {% endfor %}
+        </div>
+
+        
+            <address>By: {{ post.author}}</address>
+            <br/>
+            <hr>
+            <br/>
+            <div class='content'>
+                {{ post.content|linebreaks }}
+            </div>
+            <br/>
+            <br/>
+
+            <div class='image-_and_like_container'>
+            <form action = "{% url 'like-post' post.slug %}" method="POST">
+            {% csrf_token%}
+            {% if user.is_authenticated %}
+            <button class='btn' type="submit" name="post_id" value="{{ post.id }}">❤️</button>  {{ total_likes }} likes 
+            {% else %}
+            <p class='auth'>hey pretty face, you can't like this post because you are not looged in, login <a class='login-page' href='/login'>here</a></p>
+            {% endif %}
+            </form>
+            <img src="{{post.image.url}}" alt={{post.title}}/>
+
+            </div>
+            <div class='date'>
+                last updated on: 
+                 <time>{{ post.date | date:"F d Y P" }} </time>
+            </div>
+        
+   
+
+        </div>
+    </section>
+
+
+
+
+
+    <section>
+        <ul class="comments">
+            {% for comment in comments %}
+            <li class="comment">
+            {% comment %} <a href="user/{{comment.name}}">{ {% endcomment %}
+                <h3>{{ comment.name }}:</h3>
+                <p class='single_comment'>{{ comment.comment|linebreaks }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+
+    <div>
+        <form id='comment-form' action="{% url "single_post" post.slug %}" method="POST">
+        {% csrf_token %}
+        {% for form_field in comment_form %}
+        <div class='comment_form'>
+        {{ form_field.label_tag }}
+        {{ form_field }}
+        <div>
+        {% endfor %}
+        </div class='form-field'>
+        </div>
+            {% if user.is_authenticated %}
+            <button class='btn'>💚💙💜</button>
+            {% else %}
+            <p class='auth'>hey pretty face, you can't comment because you are not looged in, login <a class='login-page' href='/login'>here</a></p>
+            {% endif %}
+        </form>
+    </div>
+
+
+
+
+{% endblock %}

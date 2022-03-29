@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+💄Makeup 
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "makeup/homePage.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+
+<section>
+    <header>
+        <h1>Makeup</h1>
+    </haeder>
+    <p>Where Art and Beauty Meet</p>
+</section>
+
+<section >
+<div>
+    <a class="link" href="{% url "login" %}">Login</a>
+</div>
+    <div >
+        <a class="link" href="{% url "register" %}">Register</a>
+    </div>
+    <div >
+        <a class="link"  href="{% url "all-posts" %}">Enjoy the Beauty</a>
+    </div>
+</section>
+
+
+{% endblock %}
