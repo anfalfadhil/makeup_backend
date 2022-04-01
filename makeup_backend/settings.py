@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from os import getenv
 import os
-import dotenv 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +29,10 @@ dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
+
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
 
 
 
@@ -127,7 +130,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'makeup',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '5432',
+        'USER': 'anfalfadhil',
+        'PASSWORD' : 'Sa1865969$$'
     }
 }
 
