@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from os import getenv
 import os
-import django_heroku
+# import django_heroku
 from dotenv import load_dotenv
 load_dotenv()
 
