@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from os import getenv
 import os
+import django_heroku
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -125,14 +126,28 @@ WSGI_APPLICATION = 'makeup_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'makeup',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#         'USER': 'anfalfadhil',
+#         'PASSWORD' : 'Sa1865969$$'
+#     }
+# }
+
+
+ALLOWED_HOSTS=['makeup-backend.herokuapp.com']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'makeup',
-        'HOST': 'localhost',
+        'NAME': 'd58s6cqbcpo0ve',
+        'HOST': 'ec2-3-230-122-20.compute-1.amazonaws.com',
         'PORT': '5432',
-        'USER': 'anfalfadhil',
-        'PASSWORD' : 'Sa1865969$$'
+        'USER': 'qfybhhjofoqves',
+        'PASSWORD' : '33ab4541043592b48c41760f92367309077ba6e7425ceef266c6cbbcd9dcdda1'
     }
 }
 
