@@ -17,6 +17,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,11 +44,11 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv("IS_DEVELOPMENT", True)
 
-ALLOWED_HOSTS = [
-    #  'django-env.eba-xmmvkvyn.us-east-1.elasticbeanstalk.com'
-    # makeup-env.eba-2sm3qfyw.us-east-2.elasticbeanstalk.com/
+# ALLOWED_HOSTS = [
+#     #  'django-env.eba-xmmvkvyn.us-east-1.elasticbeanstalk.com'
+#     # makeup-env.eba-2sm3qfyw.us-east-2.elasticbeanstalk.com/
     
-]
+# ]
 
 
 AUTHENTICATION_BACKENDS = [
@@ -70,6 +72,7 @@ INSTALLED_APPS = [
     'guardian',
     'corsheaders',
     'rest_framework',
+    'whitenoise.runserver_nostatic'
 ]
 
 REST_FRAMEWORK = {
@@ -88,7 +91,7 @@ CRISPY_TEMPLATE_PACK = 'uni_form'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,7 +141,7 @@ WSGI_APPLICATION = 'makeup_backend.wsgi.application'
 # }
 
 
-ALLOWED_HOSTS=['makeup-backend.herokuapp.com']
+ALLOWED_HOSTS=['makeup-backend.herokuapp.com', 'localhost', '127.0.0.1']
 
 DATABASES = {
     'default': {
@@ -151,6 +154,10 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+DEBUG = False
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -211,3 +218,5 @@ MEDIA_URL = "/docs/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
