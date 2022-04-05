@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* background images source 
+https://unsplash.com/backgrounds/things/makeup
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+body {
+   
+    font-family: 'Roboto', sans-serif;
+    /* font-weight: 400; */
+    font-size: 16px;
+    line-height: 1.7;
+    color:black;
+    padding:8px;
+    border-radius: 15px;
+    }
+
+
+a {
+    text-decoration: none;
+    color:black; 
+}
+
+.home a {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.7;
+    color:black;  
+    list-style: none;
+    text-decoration: none;
+    margin: 20px;
+}
+
+#posts_list {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgb(254, 80, 80);
+    background-color: aliceblue;
+    width: 95vw;
+    /* max-width: 30rem; */
+}
+
+
+#posts_list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#posts_list il {
+    text-decoration: none;
+    margin: 1rem 0;
+    list-style: none;
+}
+
+#posts_list a {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(26, 26, 97);
+    font-weight: bold;
+}
+
+#posts_list a:hover,
+#posts_list a:active {
+    background-color: aquamarine;
+}
+
+#all_posts_list {
+    list-style: none;
+    /* margin: 8rem auto 3rem auto; */
+    padding: 2rem;
+    width: 95vw;
+}
+
+#all_posts_list_items{
+    list-style: none;
+    /* border: 1px solid pink; */
+}
+
+.beauty_collection_title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    line-height: 1.7;
+    color:black;  
+    text-align: center;
+
+}
+
+#post_card {
+    border: 1px solid pink;
+    width: 30vw;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 3px;
+}
+nav {
+    display: inline-block;
+}
+
+/* 
+span{
+    display: inline-block;
+    text-align: right;
+} */
+.user {
+    display: inline-block;
+    text-align: right;
+}
+
+.post_title{
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color:black;  
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+}
+
+.single_post_container{
+    display: inline-block;
+    overflow:auto;
+}
+
+.tags{
+    display: block;
+    text-align: right;
+    float: right;
+}
+
+.add_to_my_palette_bto {
+    display: block;
+    text-align: right;
+    float: right;
+}
+
+.comments {
+    list-style: none;
+}
+
+.comment_form{
+    display: inline;
+    /* height: 100px; */
+}
+
+
+textarea {
+    display: inline;
+    height: 50px;
+
+}
+
+.comment_bto {
+    display: inline;
+}
+
+
+

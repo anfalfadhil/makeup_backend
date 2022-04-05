@@ -1,0 +1,23 @@
+body {
+    background-image: url('allPostsPage.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    text-align: center;
+    font-size: 1rem;
+    margin: auto;
+    background-repeat: no-repeat;
+}
+
+.container {
+    border: 1px solid rgb(247, 149, 165);
+    background-color: white;
+    border-radius: 10px;
+    width: 23vw;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgb(252, 27, 151);
+}

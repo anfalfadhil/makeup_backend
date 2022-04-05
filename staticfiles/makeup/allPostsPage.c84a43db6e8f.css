@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* background images source 
+https://unsplash.com/backgrounds/things/makeup
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+div {
+    display: block;
+}
+
+body {
+   
+    font-family: 'Roboto', sans-serif;
+    /* font-weight: 400; */
+    font-size: 16px;
+    line-height: 1.7;
+    color:black;
+    /* padding:8px; */
+    border-radius: 15px;
+}
+
+header{
+        
+    background-image: url("glitter.100f36ca6958.jpg");
+    clip-path: polygon(0 0 , 100% 0, 100% 70%, 0 100%);
+    color:black;
+    border-radius: 10px 10px 0 0 ;
+    height: 35vh; 
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+        
+    
+}
+    
+
+a {
+    text-decoration: none;
+    color:black; 
+    
+}
+
+.home{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.7;
+    color:black;  
+}
+
+
+
+#all_posts_list_items{
+    list-style: none;
+    padding: auto;
+    margin: auto;
+    /* border: 1px solid pink; */
+}
+
+.beauty_collection_title {
+    border-radius: 10px;
+    display: block;
+    text-align:center;
+    margin: auto;
+    font-weight: bolder;
+    font-size: 2rem;
+
+}
+
+.post-card-image {
+    /* width:100%; */
+    object-fit: cover;
+    margin: 0;
+    display: inline;
+    padding:0;
+    max-width: 20vw;
+    border-radius: 8px;
+}
+
+.posts-container{
+    
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    position: relative;
+    align-content: stretch;
+}
+
+#post-card {
+   width: 25%;
+    max-width: 500px;
+    max-height: 500px;
+    display: inline;
+    margin: 5px;
+    padding: 0;
+    border-radius: 3px;
+    /* position: relative;
+    text-align: center;
+    justify-self: auto;
+    align-self: auto; */
+}
+
+image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+}
+
+
+/* #post-card:before {
+     content:"";
+     width:100%;
+     height:100%;
+     display:block;
+     transition:all 0.3s ease 0s;
+     z-index:2;
+     position: absolute;
+     top: 0;
+     left: 0;
+   }  */
+
+
+
+nav {
+    display: inline;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav_item {
+    display: inline;
+    text-align: right;
+    font-size: 1.5rem;
+}
+

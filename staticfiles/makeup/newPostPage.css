@@ -1,0 +1,73 @@
+
+body {
+    background-image: url("makeupBackground.jpg") ;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem;
+}
+
+#new_post_header {
+    text-align: center;
+    color: rgb(252, 27, 151);
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    line-height: 1.7;
+
+}
+
+form {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.new_post_container {
+    border: 1px solid rgb(247, 149, 165);
+    background-color: white;
+    border-radius: 10px;
+    width: 40vw;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 0 2px 8px rgb(252, 27, 151);
+    padding: 20px;
+    /* margin: 10px; */
+    text-align: center;
+}
+
+.home {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.7;
+    color:rgb(0, 0, 0);  
+    text-decoration: none;
+    /* margin: 10px; */
+}
+
+
+label {
+    /* font-weight: bold; */
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    display: block;
+    
+}
+
+ul {
+ list-style: none;
+}
+
+input, textarea {
+    height: 40px;
+    padding: 0.25rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    margin: auto;
+    display: block;
+    margin: 5px auto;
+
+}
+
+file-upload-btton {
+     background-color: rgb(196, 97, 198);
+}

@@ -1,0 +1,44 @@
+.home a {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.7;
+    color:black;  
+    list-style: none;
+    text-decoration: none;
+    margin: 20px;
+}
+
+body {
+
+    background-image: url("mmbg.fa5a476a26c5.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.edit_form_container {
+    border: 1px solid rgb(247, 149, 165);
+    background-color: white;
+    border-radius: 10px;
+    width: 23vw;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgb(252, 27, 151);
+}
+
+.form-dev {
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.btn {
+    background-color: rgb(246, 128, 242);
+    border-radius: 3px;
+
+}
+

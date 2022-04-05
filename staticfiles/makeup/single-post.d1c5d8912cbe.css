@@ -1,0 +1,166 @@
+
+body {
+    margin: 50px;
+    background-image: url("8541.fdac266385f6.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+
+
+.container{
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color:black; 
+}
+
+.home{
+    margin: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.7;
+    color:black;  
+    
+    float: left;
+}
+
+.add {
+    float: right;
+    background-color: brown;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.nav-container {
+    display: block;
+}
+
+.content {
+    float: left;
+    font-size: 1rem;
+    margin: 5px;
+    display: block;
+}
+img {
+    border-radius: 10px;
+    max-width: 50%;
+    border-radius: 30px;
+    margin: 50px;
+    display: block;
+    
+
+}
+
+.user,  .nav_item {
+    display: block;
+    text-align: right;
+    font-size: 30px;
+    margin: 10px;
+}
+nav {
+    display: block;
+    float: right;
+    text-align: left;
+    top: 200px;
+}
+.image-_and_like_container{
+    display: block;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.date {
+    float: right;
+    font-size: 1.25rem; 
+}
+
+.post_title {
+    font-size: 2rem;
+    text-transform: capitalize;
+    float: left;
+    display: block;
+}
+
+.the-post {
+    display: block;
+}
+
+.btn{
+    background-color: transparent;
+    border:none;
+    display: inline;
+    font-size: 40px;
+
+}
+address { 
+    float: left;
+    font-size: 2rem;
+    display: block;
+}
+
+.comment{
+    list-style: none;
+}
+
+p {
+    font-size: 2rem;
+}
+
+header{
+    /* background-image: url("8541.fdac266385f6.jpg"); */
+    background-position: center;
+    background-size: auto 400px;
+    margin: auto;
+    padding:auto;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.comment-form {
+width: 90%;
+max-width: 20rem;
+margin: 3rem auto;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+
+
+}
+ label {
+     font-weight: bold;
+     margin-bottom: 0.5rem;
+     font-size: 1.25rem;
+     display: block;
+ }
+
+ textarea {
+     height: 75px;
+     font: inherit;
+     padding: 0.25rem;
+     border-radius: 6px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+     margin: 10px;
+ }
+
+ .login-page {
+
+     color: rgb(205, 69, 255);
+ }
+
+ .auth { 
+     border: 1px solid black;
+     width: 200px;
+     border-radius: 5px;
+     background-color: rgba(222, 96, 217, 0.304);
+     float: right;
+     font-size: 1rem;
+     margin: 3px;
+     padding: 2px;
+ }
